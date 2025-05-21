@@ -1,0 +1,18 @@
+.container{
+    display: flex;
+}
+.start{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+.tituloInicio{
+    display: flex;
+    flex-direction: column;
+    font-size: 4rem;
+    font-weight: bold;
+    color: lawngreen;
+}
