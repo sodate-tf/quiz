@@ -1,18 +1,26 @@
+/* 1. Importações de Fontes (DEVE VIR NO INÍCIO) */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+
+/* 2. Variáveis CSS (Root) */
 :root {
   --background: #6c54d8;
   --foreground: #FFF;
   /* ... outras propriedades ... */
 }
 
+/* 3. Tema Inline (se usado pelo seu framework/biblioteca) */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-geist-sans); /* Verifique se esta variável está definida em outro lugar ou remova se não for usada */
+  --font-mono: var(--font-geist-mono); /* Verifique se esta variável está definida em outro lugar ou remova se não for usada */
 }
 
+/* 4. Esquema de Cores Escuro */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -20,34 +28,53 @@
   }
 }
 
+/* 5. Reset Básico e Configurações Globais (CRÍTICO PARA RESPONSIVIDADE) */
 html,
-body{
+body {
   padding: 0;
   margin: 0;
-  background-color: #6c54d8;
-  color:#FFF;
-  display: flex;
-}
-*{
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  /* box-sizing: border-box; - Já está no *, mas é bom ter aqui para clareza */
+  height: 100%; /* ESSENCIAL: Garante que html e body ocupem 100% da altura da viewport */
+  overflow-x: hidden; /* Evita rolagem horizontal indesejada */
 }
 
+/* 6. Configuração Flexbox para o Body (Para gerenciar o layout vertical da aplicação) */
+body {
+  background-color: var(--background); /* Usa a variável de fundo */
+  color: var(--foreground); /* Usa a variável de cor do texto */
+  font-family: "Poppins", sans-serif; /* Define a fonte globalmente */
+  
+  display: flex; /* Transforma o body em um contêiner flexível */
+  flex-direction: column; /* Organiza os filhos diretos do body em coluna */
+  min-height: 100vh; /* Garante que o body tenha no mínimo a altura da viewport */
+  /* Removido: display: flex; min-height: 100vh; - Duplicado */
+}
+
+/* 7. Regra Universal (Boa Prática) */
+* {
+  box-sizing: border-box; /* Garante que padding e border sejam incluídos no width/height */
+  /* Removido: font-family: "Poppins", sans-serif; - Já definido no body */
+}
+
+/* 8. Cuidado com Selectores Genéricos (Revisado) */
+/* Removido: div { display: flex; } */
+/* Esta regra é muito genérica e faria com que TODAS as divs fossem flex containers,
+   o que provavelmente causaria problemas de layout em toda a aplicação.
+   Aplique display: flex; apenas às divs que realmente precisam ser flex containers. */
+
+
+/* 9. Classes de Fonte (Se você as usa diretamente) */
 .poppins-light {
-  font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-style: normal;
 }
 
 .poppins-regular {
-  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
 .poppins-bold {
-  font-family: "Poppins", sans-serif;
   font-weight: 700;
   font-style: normal;
 }
-

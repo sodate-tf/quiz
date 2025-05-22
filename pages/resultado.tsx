@@ -10,7 +10,7 @@ export default function Resultado(){
     return(
         <div className={styles.resultado}>
             <h1>Resultado Final</h1>
-            <div style={{display: "flex"}}>
+            <div className={styles.boxFinal} style={{display: "flex"}}>
                 <Estatistica texto="Perguntas" valor={total} />
                 <Estatistica texto="Certas" valor={certas} 
                     corFundo="#9cd2a4"

@@ -4,6 +4,7 @@ import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 
 const BASE_URL ='https://quiz-five-liard.vercel.app/api'
+//const BASE_URL ='http://localhost:3000/api'
 
 export default function Game() {
   const [questao, setQuestao] = useState<QuestaoModel>()

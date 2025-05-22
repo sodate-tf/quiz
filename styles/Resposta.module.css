@@ -1,13 +1,10 @@
 .resposta{
     display: flex;
     width: 80%;
-    min-width: 500px;
     height: 100px;
     margin: 10px;
     perspective: 1000px;
     position: relative;
-    
-    
 }
 .conteudoResposta{
     position: relative;

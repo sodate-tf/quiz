@@ -2,8 +2,17 @@
     display: flex;
     flex-direction: column;
     width: 100vw;
-    justify-content: center;
     align-items: center;
     height: 100vh;
     font-size: 2rem;
+    padding: 30px;;
+}
+.resultado h1{
+    text-align: center;
+}
+.boxFinal{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100vh;
 }
